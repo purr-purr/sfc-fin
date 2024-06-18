@@ -1,0 +1,77 @@
+.container {
+	@include flex(center, space-between, 29px);
+	padding-block: 100px 150px;
+
+	@include media($mobile-bp) {
+		align-items: center;
+		flex-direction: column;
+		padding-top: 40px;
+		padding-bottom: 100px;
+	}
+}
+
+.info {
+	@include flex(flex-start, center, 50px);
+	flex-direction: column;
+	text-align: left;
+	width: 50%;
+	position: relative;
+	z-index: 2;
+
+	@include media($mobile-bp) {
+		align-items: center;
+		gap: 20px;
+		width: 100%;
+		text-align: center;
+	}
+
+	&Title {
+		max-width: 564px;
+		font-size: 50px;
+		text-transform: uppercase;
+		color: var(--bold-text);
+
+		@include media($mobile-bp) {
+			font-size: 32px;
+		}
+	}
+
+	&Desc {
+		max-width: 433px;
+	}
+}
+
+.poster {
+	z-index: 1;
+
+	@include pseudo(before) {
+		background: url('../../assets/blur.svg') no-repeat;
+		width: 1136px;
+		height: 1114px;
+		right: calc(100% - 1136px / 2);
+		top: -260px;
+		z-index: -1;
+
+		@include media($mobile-bp) {
+			width: 100%;
+			height: 100%;
+			right: 0;
+			top: -200px;
+			background-size: contain;
+		}
+	}
+
+	@include media($mobile-bp, min) {
+		max-width: 50%;
+	}
+
+	img {
+		display: block;
+		height: auto;
+		width: 100%;
+
+		@include media($mobile-bp) {
+			max-height: 400px;
+		}
+	}
+}
