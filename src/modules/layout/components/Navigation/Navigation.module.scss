@@ -29,14 +29,14 @@
 	cursor: pointer;
 	font-size: 14px;
 	font-weight: 700;
-	color: var(--bold-text);
+	color: var(--white);
 
 	@include pseudo(after) {
 		right: 0;
 		bottom: -4px;
 		width: 0;
 		height: 1px;
-		background-color: var(--bold-text);
+		background-color: var(--white);
 		transition: width 0.3s ease-in-out;
 	}
 
@@ -52,7 +52,7 @@
 
 	&:hover,
 	&.active {
-		color: var(--bold-text);
+		opacity: 1;
 
 		&:after {
 			width: 100%;

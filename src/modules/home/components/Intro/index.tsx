@@ -1,24 +1,21 @@
-import Image from 'next/image';
-
-import {COMPANY_CATCHPHRASE} from '@utils/const';
-
 import s from './Intro.module.scss';
-
-import INTRO_IMAGE from '@modules/home/assets/intro-poster.jpg';
+import Button from "@modules/common/components/Button";
 
 const Intro = () => {
 	return (
 		<section className={s.container}>
 			<article className={s.info}>
 				<h1 className={s.infoTitle}>
-					Фінансові рішення <br/> для вашого успіху
+					Майбутнє фінансів <br/> починається з нами
 				</h1>
-				<p className={s.infoDesc}>{COMPANY_CATCHPHRASE}</p>
-			</article>
+				<p className={s.infoDesc}>ТОВ &quot;Системний Фінансовий
+					Консалтинг&quot; пропонує безпечні та ефективні фінансові рішення для
+					вашого добробуту.</p>
 
-			<div className={s.poster}>
-				<Image src={INTRO_IMAGE} alt="Home intro"/>
-			</div>
+				<div className={s.buttonsGroup}>
+					<Button text="Розрахувати кредит"/>
+				</div>
+			</article>
 		</section>
 	);
 };

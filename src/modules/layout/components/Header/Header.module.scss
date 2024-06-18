@@ -4,8 +4,8 @@
 	left: 0;
 	z-index: 99;
 	width: 100%;
-	padding-block: 38px 24px;
-	@include flex(center, space-between, 24px);
+	padding-block: 16px;
+	@include flex($align: center);
 
 	@include media($mobile-bp) {
 		padding-block-start: 24px;
@@ -18,13 +18,11 @@
 		bottom: 0;
 		width: 100vw;
 		height: 100%;
-		background-color: transparent;
+		background-color: var(--primary);
 		z-index: -1;
-		transition: background-color 0.2s ease-in-out;
 	}
+}
 
-	&.active:after {
-		background-color: var(--main-bg);
-		transition: background-color 0.2s ease-in-out;
-	}
+.signInButton {
+	margin-left: 44px;
 }

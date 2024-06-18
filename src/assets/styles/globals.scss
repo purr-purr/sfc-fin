@@ -1,11 +1,12 @@
 @import 'mixins';
 
 :root {
-	--main-bg: #f9f9f9;
-	--primary: #9f29fc;
-	--main-text: #323232;
-	--bold-text: #222;
+	--main-bg: #fff;
+	--primary: #0056B9;
+	--main-text: rgba(18,18,18, 70%);
+	--bold-text: #121212;
 	--white: #fff;
+	--light-blue: #C0D4EE;
 }
 
 * {
