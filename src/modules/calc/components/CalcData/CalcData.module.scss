@@ -1,0 +1,88 @@
+.container {
+}
+
+.age {
+	&Title {
+		font-size: 16px;
+		line-height: 1.5;
+		font-weight: 500;
+		text-align: center;
+		color: var(--primary);
+		margin-bottom: 16px;
+	}
+
+	&Rules {
+		@include flex($gap: 16px);
+		margin-bottom: 40px;
+	}
+
+	&RulesItem {
+		width: 50%;
+
+		ul {
+			list-style-type: none;
+		}
+
+		p,
+		li {
+			font-size: 14px;
+		}
+	}
+}
+
+.tabs {
+	width: 100%;
+	border-radius: 12px;
+	overflow: hidden;
+	z-index: 1;
+	margin-bottom: 16px;
+
+	@include pseudo() {
+		z-index: 2;
+		left: 0;
+		top: 0;
+		width: 50%;
+		height: 100%;
+		background-color: var(--primary);
+		pointer-events: none;
+		transform: translateX(100%);
+		transition: transform 0.5s ease-in-out;
+	}
+
+	&.activeRight:before {
+		transform: translateX(0);
+		transition: transform 0.5s ease-in-out;
+	}
+}
+
+.tab {
+	width: 50%;
+	outline: none;
+	padding: 8px;
+	text-align: center;
+	position: relative;
+	z-index: 3;
+	background-color: transparent;
+	border-radius: 12px;
+	border: 2px solid var(--primary);
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--primary);
+	font-weight: 500;
+	transition: color 0.3s ease-in-out;
+
+	&:first-child {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	&:last-child {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	&.active {
+		color: var(--white);
+		transition: color 0.3s ease-in-out;
+	}
+}

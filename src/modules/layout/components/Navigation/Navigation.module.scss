@@ -1,5 +1,5 @@
 .container {
-	@include flex($align: center, $gap: 40px);
+	@include flex($align: center, $gap: 44px);
 	list-style-type: none;
 
 	@include media($laptop-bp) {
@@ -27,8 +27,6 @@
 .link {
 	all: unset;
 	cursor: pointer;
-	font-size: 14px;
-	font-weight: 700;
 	color: var(--white);
 
 	@include pseudo(after) {
