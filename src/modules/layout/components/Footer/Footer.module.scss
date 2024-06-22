@@ -14,10 +14,10 @@
 		all: unset;
 		cursor: pointer;
 		font-weight: 700;
+		color: var(--bold-text);
 	}
 
-	p,
-	a {
+	p {
 		color: var(--main-text);
 	}
 }

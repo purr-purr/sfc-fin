@@ -1,8 +1,5 @@
 import Link from 'next/link';
 
-import BlockTitle from '@modules/common/components/BlockTitle';
-import IconFrame from '@modules/common/components/IconFrame';
-
 import {
 	COMPANY_ADDRESS,
 	COMPANY_EMAIL,
@@ -16,6 +13,7 @@ import ICON_PHONE from '@public/assets/icon-phone.svg';
 import ICON_TIME from '@public/assets/icon-time.svg';
 
 import s from './Contacts.module.scss';
+import SplitBlocks from '@modules/common/components/SplitBlocks';
 
 interface IContactItem {
 	icon: string;
@@ -52,27 +50,29 @@ const Contacts = () => {
 
 	return (
 		<section className={s.container} id="contacts">
-			<BlockTitle title="Контактна інформація" />
-
-			<ul className={s.contacts}>
-				{contactsList.map((item) => (
-					<li key={item.title} className={s.contactsInner}>
-						<IconFrame icon={item.icon} />
-						<dl>
-							<dt>{item.title}</dt>
-							<dd>
-								{item.link ? (
-									<Link href={item.link} target="_blank">
-										{item.desc}
-									</Link>
-								) : (
-									item.desc
-								)}
-							</dd>
-						</dl>
-					</li>
-				))}
-			</ul>
+			<SplitBlocks
+				title="Зв'яжіться з нами або завітайте особисто"
+				anchor="contacts"
+			>
+				<ul className={s.contacts}>
+					{contactsList.map((item) => (
+						<li key={item.title} className={s.contactsInner}>
+							<dl>
+								<dt>{item.title}</dt>
+								<dd>
+									{item.link ? (
+										<Link href={item.link} target="_blank">
+											{item.desc}
+										</Link>
+									) : (
+										item.desc
+									)}
+								</dd>
+							</dl>
+						</li>
+					))}
+				</ul>
+			</SplitBlocks>
 
 			<div className={s.map}>
 				<iframe

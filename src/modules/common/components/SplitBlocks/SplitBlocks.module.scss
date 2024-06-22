@@ -8,20 +8,9 @@
 	}
 }
 
-.title {
-	font-size: 20px;
-	font-weight: 600;
-	color: var(--bold-text);
-	width: 100%;
-
-	@include media($mobile-bp) {
-		font-size: 18px;
-	}
-}
-
 .leftSide {
-	width: 466px;
-	min-width: 466px;
+	width: 409px;
+	min-width: 409px;
 
 	@include media($mobile-bp) {
 		width: 100%;

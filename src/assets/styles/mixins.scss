@@ -39,3 +39,10 @@
 		@content;
 	}
 }
+
+@mixin gradient-text() {
+	color: var(--bold-text);
+	background: -webkit-linear-gradient(bottom left, #0b081c, var(--primary));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
