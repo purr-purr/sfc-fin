@@ -9,10 +9,10 @@
 	&.active {
 		display: block;
 		position: absolute;
-		width: calc(100% + 40px);
+		width: calc(100% + 80px);
 		height: 100vh;
 		background-color: var(--main-bg);
-		left: -20px;
+		left: -40px;
 		top: 0;
 		padding-top: 80px;
 		padding-left: 40px;
@@ -36,12 +36,17 @@
 		height: 1px;
 		background-color: var(--white);
 		transition: width 0.3s ease-in-out;
+
+		@include media($laptop-bp) {
+			background-color: var(--bold-text);
+		}
 	}
 
 	@include media($laptop-bp) {
 		display: block;
 		width: fit-content;
 		margin-bottom: 14px;
+		color: var(--bold-text);
 	}
 
 	@include media($mobile-bp) {

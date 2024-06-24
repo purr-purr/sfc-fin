@@ -1,4 +1,6 @@
 .container {
+	margin-top: 40px;
+	margin-bottom: 16px;
 }
 
 .title {
@@ -8,4 +10,46 @@
 	text-align: center;
 	color: var(--bold-text);
 	margin-bottom: 16px;
+
+	@include media($mobile-bp) {
+		font-size: 16px;
+	}
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+
+	& tr {
+		display: flex;
+		padding: 12px 16px;
+
+		&:nth-child(even) {
+			background-color: #F4F4F5;
+		}
+	}
+
+	& td {
+		font-size: 16px;
+		line-height: 1.2;
+
+		@include media($mobile-bp) {
+			font-size: 14px;
+		}
+
+		&:first-child {
+			width: 66%;
+			min-width: 66%;
+			padding-right: 20px;
+
+			@include media($mobile-bp) {
+				padding-right: 5px;
+			}
+		}
+
+		&:last-child {
+			font-weight: 500;
+			color: var(--primary);
+		}
+	}
 }

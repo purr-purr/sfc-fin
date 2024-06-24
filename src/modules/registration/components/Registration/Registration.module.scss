@@ -1,0 +1,22 @@
+.container {
+	max-width: 1008px;
+	width: 100%;
+}
+
+.title {
+	margin-bottom: 40px;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 700;
+	color: var(--bold-text);
+}
+
+.startRegistrationBtn {
+	display: block;
+	margin-inline: auto;
+	margin-block: 26px 2px;
+
+	@include media($mobile-bp) {
+		margin-block-start: 20px;
+	}
+}

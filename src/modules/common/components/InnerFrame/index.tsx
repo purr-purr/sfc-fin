@@ -1,4 +1,4 @@
-import { FC, type ReactNode } from 'react';
+import {FC, type ReactNode} from 'react';
 
 import s from './InnerFrame.module.scss';
 import cn from 'classnames';
@@ -6,9 +6,10 @@ import cn from 'classnames';
 const InnerFrame: FC<{
 	children: ReactNode;
 	className?: string;
-}> = ({ children, className }) => {
+	id?: string;
+}> = ({children, className, id}) => {
 	return (
-		<section className={cn(s.container, className && className)}>
+		<section id={id} className={cn(s.container, className && className)}>
 			{children}
 		</section>
 	);

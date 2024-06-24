@@ -4,6 +4,10 @@
 	@include media($mobile-bp) {
 		margin-bottom: 35px;
 	}
+
+	& > .inner {
+		margin-bottom: 40px;
+	}
 }
 
 .map {
@@ -16,6 +20,7 @@
 
 	@include media($mobile-bp) {
 		height: 300px;
+		border-radius: 10px;
 	}
 
 	&:hover {
@@ -31,14 +36,11 @@
 }
 
 .contacts {
-	@include flex(flex-start, space-evenly, 24px);
+	@include flex(flex-start, flex-start);
+	row-gap: 40px;
+	column-gap: 24px;
 	flex-wrap: wrap;
 	list-style-type: none;
-	margin-block: 48px;
-
-	@include media($mobile-bp) {
-		margin-block: 24px;
-	}
 
 	&Inner {
 		@include flex($align: center, $gap: 16px);
@@ -50,11 +52,20 @@
 		}
 
 		& dt {
-			font-weight: 600;
+			font-size: 24px;
+			font-weight: 500;
 			color: var(--bold-text);
+			margin-bottom: 16px;
+
+			@include media($mobile-bp) {
+				font-size: 16px;
+				margin-bottom: 8px;
+			}
 		}
 
 		& dd {
+			color: var(--bold-text);
+			font-weight: 300;
 			white-space: break-spaces;
 
 			a {

@@ -10,7 +10,6 @@ import {
 import ICON_EMAIL from '@public/assets/icon-email.svg';
 import ICON_MAP from '@public/assets/icon-map.svg';
 import ICON_PHONE from '@public/assets/icon-phone.svg';
-import ICON_TIME from '@public/assets/icon-time.svg';
 
 import s from './Contacts.module.scss';
 import SplitBlocks from '@modules/common/components/SplitBlocks';
@@ -40,12 +39,7 @@ const Contacts = () => {
 			title: 'Телефон',
 			desc: COMPANY_PHONE,
 			link: `tel:${COMPANY_PHONE}`,
-		},
-		{
-			icon: ICON_TIME,
-			title: 'Години Роботи',
-			desc: `ПН-ПТ з 9:00 до 19:00.\nОбідня перерва з 13:00 до 14:00`,
-		},
+		}
 	];
 
 	return (
@@ -53,6 +47,7 @@ const Contacts = () => {
 			<SplitBlocks
 				title="Зв'яжіться з нами або завітайте особисто"
 				anchor="contacts"
+				className={s.inner}
 			>
 				<ul className={s.contacts}>
 					{contactsList.map((item) => (

@@ -8,6 +8,8 @@
 	--white: #fff;
 	--light-blue: #c0d4ee;
 	--gray: #d0d0d0;
+	--light-gray: #E4E4E7;
+	--red: #EB5757;
 }
 
 * {
@@ -95,4 +97,24 @@ details > summary::-webkit-details-marker {
 section,
 article {
 	scroll-margin-top: 100px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px var(--white) inset !important;
+	-webkit-text-fill-color: var(--bold-text) !important;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+.MuiStepLabel-alternativeLabel {
+	color: var(--main-text) !important;
+	font-weight: 500;
+	font-size: 14px;
+	cursor: auto;
+}
+
+.Mui-completed {
+	color: var(--primary) !important;
 }

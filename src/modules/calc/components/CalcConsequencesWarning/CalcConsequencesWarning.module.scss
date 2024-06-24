@@ -1,0 +1,15 @@
+.container {
+	max-width: 1000px;
+
+	ul {
+		padding-left: 20px;
+
+		@include media($mobile-bp) {
+			padding-left: 10px;
+		}
+
+		li:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+}

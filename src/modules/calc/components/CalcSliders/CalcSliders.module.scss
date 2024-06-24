@@ -21,4 +21,9 @@
 .range {
 	font-size: 16px;
 	line-height: 20px;
+
+	@include media($mobile-bp) {
+		font-size: 14px;
+		line-height: 18px;
+	}
 }

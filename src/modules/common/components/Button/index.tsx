@@ -1,16 +1,28 @@
-import { FC } from 'react';
+import {FC} from 'react';
 
 import s from './Button.module.scss';
 import cn from 'classnames';
 
 const Button: FC<{
 	text: string;
-	type?: 'primary' | 'white';
+	type?: 'primary' | 'white' | 'text';
 	size?: 'small' | 'regular';
 	className?: string;
-}> = ({ text, type = 'primary', size = 'regular', className }) => {
+	onClick?: () => void;
+	isDisabled?: boolean;
+}> = ({
+	      isDisabled = false,
+	      onClick,
+	      text,
+	      type = 'primary',
+	      size = 'regular',
+	      className
+      }) => {
 	return (
-		<button className={cn(s.container, s[type], s[size], className && className)}>
+		<button
+			disabled={isDisabled}
+			onClick={onClick}
+			className={cn(s.container, s[type], s[size], className && className)}>
 			{text}
 		</button>
 	);

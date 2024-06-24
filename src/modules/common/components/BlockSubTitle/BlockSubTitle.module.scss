@@ -1,9 +1,9 @@
 .container {
 	font-size: 40px;
-	font-weight: 800;
+	font-weight: 700;
 	@include gradient-text();
 
 	@include media($mobile-bp) {
-		font-size: 26px;
+		font-size: 24px;
 	}
 }

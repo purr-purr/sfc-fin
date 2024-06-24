@@ -1,4 +1,4 @@
-import { FC, type ReactNode } from 'react';
+import {FC, type ReactNode} from 'react';
 
 import BlockSubTitle from '@modules/common/components/BlockSubTitle';
 
@@ -10,10 +10,10 @@ const SplitBlocks: FC<{
 	className?: string;
 	title: string;
 	anchor?: string;
-}> = ({ children, title, anchor, className }) => {
+}> = ({children, title, anchor, className}) => {
 	return (
-		<article className={cn(s.container, className && className)} id={anchor}>
-			<BlockSubTitle className={s.leftSide} title={title} />
+		<article className={cn(className && className, s.container)} id={anchor}>
+			<BlockSubTitle className={s.leftSide} title={title}/>
 			<div className={s.rightSide}>{children}</div>
 		</article>
 	);

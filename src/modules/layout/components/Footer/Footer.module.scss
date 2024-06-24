@@ -4,7 +4,8 @@
 	padding-bottom: 50px;
 
 	@include media($mobile-bp) {
-		padding-top: 50px;
+		padding-top: 24px;
+		padding-bottom: 24px;
 		flex-direction: column;
 		align-items: center;
 		gap: 16px;

@@ -1,0 +1,44 @@
+.container {
+	max-width: 640px;
+	width: 100%;
+}
+
+.title {
+	margin-bottom: 44px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--bold-text);
+
+	@include media($mobile-bp) {
+		font-size: 18px;
+		margin-bottom: 24px;
+	}
+}
+
+.signInButton {
+	margin-left: 44px;
+}
+
+.submitButton {
+	display: block;
+	margin-inline: auto;
+	margin-block-start: 26px;
+
+	@include media($mobile-bp) {
+		margin-block-start: 20px;
+	}
+}
+
+.errorMessage {
+	line-height: 1;
+	min-height: 14px;
+	padding-left: 4px;
+	font-size: 14px;
+	color: var(--red);
+
+	@include media($mobile-bp) {
+		font-size: 12px;
+		min-height: 12px;
+	}
+}

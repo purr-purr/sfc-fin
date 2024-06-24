@@ -23,7 +23,7 @@
 	padding: 31px 16px 31px 0;
 
 	@include media($mobile-bp) {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	@include pseudo(after) {

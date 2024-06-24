@@ -14,31 +14,30 @@ const Reports = () => {
 	return (
 		<SplitBlocks
 			title="Вся необхідна документація"
-			titleType="heading"
-			anchor="reports"
+			anchor="documentation"
 		>
 			<Accordion title="Внутрішні правила">
-				<DocumentsList list={innerRules} />
+				<DocumentsList list={innerRules}/>
 			</Accordion>
 
 			<Accordion title="Інформація про структуру власності">
-				<DocumentsList groupList={infoOwnershipStructure} />
+				<DocumentsList groupList={infoOwnershipStructure}/>
 			</Accordion>
 
 			<Accordion title="Аудиторські висновки">
-				<DocumentsList list={auditReports} />
+				<DocumentsList list={auditReports}/>
 			</Accordion>
 
 			<Accordion title="Фінансова звітність">
-				<DocumentsList groupList={financeReports} />
+				<DocumentsList groupList={financeReports}/>
 			</Accordion>
 
 			<Accordion title="Архівна інформація">
-				<DocumentsList list={archivedInformation} />
+				<DocumentsList list={archivedInformation}/>
 			</Accordion>
 
 			<Accordion title="Новини">
-				<DocumentsList list={news} />
+				<DocumentsList list={news}/>
 			</Accordion>
 		</SplitBlocks>
 	);
