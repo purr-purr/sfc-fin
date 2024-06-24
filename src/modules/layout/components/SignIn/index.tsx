@@ -4,7 +4,7 @@ import ModalLayout from "@modules/common/components/ModalLayout";
 import {type ChangeEvent, useEffect, useState} from "react";
 import Input from "@modules/common/components/Input";
 
-type FormValues = {
+type IFormValues = {
 	phone: string;
 	password: string;
 };
@@ -13,11 +13,11 @@ const SignIn = () => {
 	const [isSignInModal, setIsSignInModal] = useState<boolean>(false);
 	const [isSubmitError, setIsSubmitError] = useState<boolean>(false);
 
-	const initFormValues: FormValues = {
+	const initFormValues: IFormValues = {
 		phone: '',
 		password: ''
 	}
-	const [formValues, setFormValues] = useState<FormValues>(initFormValues);
+	const [formValues, setFormValues] = useState<IFormValues>(initFormValues);
 
 	useEffect(() => {
 		setFormValues(initFormValues);

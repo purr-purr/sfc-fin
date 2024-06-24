@@ -5,11 +5,13 @@
 	&:not(:last-child) {
 		margin-bottom: 16px;
 	}
+}
 
-	& select {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-	}
+.select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: var(--white);
 }
 
 .label {

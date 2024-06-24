@@ -26,10 +26,10 @@ const CalcSliders: FC<{
 					<p className={s.title}>Взяти {moneyAmount} грн.</p>
 					<Slider
 						aria-label="money"
-						defaultValue={1000}
+						defaultValue={500}
 						onChange={(event, value) => setMoneyAmount(value as number)}
-						step={1000}
-						min={1000}
+						step={500}
+						min={500}
 						max={moneyRange[1]}
 					/>
 					<p className={s.range}>

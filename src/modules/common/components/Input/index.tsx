@@ -3,7 +3,7 @@ import {FC, InputHTMLAttributes, ReactNode} from 'react';
 import s from './Input.module.scss';
 import cn from "classnames";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement | HTMLSelectElement> {
 	label: string,
 	placeholder?: string,
 	isInvalid?: boolean,
@@ -27,14 +27,14 @@ const Input: FC<InputProps> = ({
 			<p className={s.label}>{label}</p>
 			{isSelect ? (
 				<select {...inputProps} name={name}
-				        className={cn(s.input, isInvalid && s.invalid)}>
+				        className={cn(s.input, s.select, isInvalid && s.invalid)}>
 					{children}
 				</select>
 			) : (<input
 				{...inputProps}
 				className={cn(s.input, isInvalid && s.invalid)}
-				placeholder={placeholder}
 				name={name}
+				placeholder={placeholder || ''}
 			/>)}
 
 			<hr className={s.line}/>

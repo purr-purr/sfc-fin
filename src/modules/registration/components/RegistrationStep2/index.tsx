@@ -1,32 +1,18 @@
 import {type ChangeEvent, FC, useEffect, useState} from 'react';
 import Input from "@modules/common/components/Input";
 import Checkbox from "@modules/common/components/Checkbox";
-import {regions} from "@utils/data";
 import s from './RegistrationStep2.module.scss';
+import {validateDefault} from "@modules/registration/helpers";
+import type {
+	IFormValues,
+	IRegistrationStepProps,
+	IValidationState
+} from "@modules/registration/types";
+import RegistrationRegionsList
+	from "@modules/registration/components/RegistrationRegionsList";
 
-type FormValues = {
-	[key: string]: string;
-};
-
-type ValidationState = {
-	[key: string]: boolean;
-};
-
-
-const RegionsList = () => (
-	<>
-		{regions.map((item) => (
-			<option key={item.value} value={item.value}>
-				{item.title}
-			</option>
-		))}
-	</>
-);
-
-const RegistrationStep2: FC<{
-	isDone: (value: boolean) => void;
-}> = ({isDone}) => {
-	const initFormValues: FormValues = {
+const RegistrationStep2: FC<IRegistrationStepProps> = ({isDone}) => {
+	const initFormValues: IFormValues = {
 		id: '',
 		passport: '',
 		passportIssuedBy: '',
@@ -41,12 +27,15 @@ const RegistrationStep2: FC<{
 		regStreet: '',
 		regHouse: '',
 		regApartment: '',
+		education: '',
 		income: '',
 		socialStatus: '',
+		confirmConsumerLoans: '',
+		confirmTransferInformation: '',
 	};
 
-	const [formValues, setFormValues] = useState<FormValues>(initFormValues);
-	const [validationState, setValidationState] = useState<ValidationState>({
+	const [formValues, setFormValues] = useState<IFormValues>(initFormValues);
+	const [validationState, setValidationState] = useState<IValidationState>({
 		id: false,
 		passport: false,
 		passportIssuedBy: false,
@@ -61,13 +50,12 @@ const RegistrationStep2: FC<{
 		regStreet: false,
 		regHouse: false,
 		regApartment: false,
+		education: false,
 		income: false,
 		socialStatus: false,
+		confirmConsumerLoans: false,
+		confirmTransferInformation: false,
 	});
-
-	const validateDefault = (value: string): boolean => {
-		return value.length >= 3;
-	};
 
 	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const {name, value} = e.target;
@@ -166,7 +154,7 @@ const RegistrationStep2: FC<{
 					<option value="none">Виберіть
 						область
 					</option>
-					<RegionsList/>
+					<RegistrationRegionsList/>
 				</>
 			</Input>
 
@@ -220,7 +208,7 @@ const RegistrationStep2: FC<{
 				<option value="none">Виберіть
 					область
 				</option>
-				<RegionsList/>
+				<RegistrationRegionsList/>
 			</Input>
 
 			<Input
@@ -271,10 +259,15 @@ const RegistrationStep2: FC<{
 				onChange={handleInputChange}
 				label="Освіта"
 			>
-				<>
-					<option value="none">Виберiть освiту
-					</option>
-				</>
+				<option value="none">Виберiть освiту
+				</option>
+				<option value="1">Неповна середня</option>
+				<option value="2">Середня</option>
+				<option value="3">Середня спеціальна</option>
+				<option value="4">Неповна вища</option>
+				<option value="5">Вища</option>
+				<option value="6">Наукова ступінь</option>
+				<option value="7">Друга вища</option>
 			</Input>
 
 			<Input
@@ -296,20 +289,30 @@ const RegistrationStep2: FC<{
 				<>
 					<option value="none">Виберiть статус
 					</option>
+					<option value="1">Підприємець</option>
+					<option value="2">Особа, що провадить незалежну професійну
+						діяльність
+					</option>
+					<option value="3">Найманий працівник</option>
+					<option value="4">Домогосподарка</option>
+					<option value="5">Безробітний</option>
+					<option value="6">Пенсіонер</option>
+					<option value="7">Працюючий пенсіонер</option>
+					<option value="8">Студент</option>
 				</>
 			</Input>
 
 			<Checkbox
-				name="dataProcessing"
-				label={`Надаю ТОВ "Системний Фінансовий Консалтинг" згоду на обробку моїх персональних даних`}
-				value={formValues.dataProcessing}
+				name="confirmConsumerLoans"
+				label={`Підтверджую ознайомлення із Правилами надання споживчих кредитів`}
+				value={formValues.confirmConsumerLoans}
 				onChange={handleCheckboxChange}
 			/>
 
 			<Checkbox
-				name="offersAgreement"
-				label="Надаю згоду на отримання повідомлень про пропозиції кредитних продуктів та послуг"
-				value={formValues.offersAgreement}
+				name="confirmTransferInformation"
+				label={`Надаю ТОВ "Системний Фінансовий Консалтинг" згоду на запит та передачу інформації, що складає мою кредитну історію`}
+				value={formValues.confirmTransferInformation}
 				onChange={handleCheckboxChange}
 			/>
 		</>

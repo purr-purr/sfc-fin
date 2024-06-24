@@ -50,6 +50,18 @@
 		}
 	}
 
+	&.light {
+		background-color: var(--white);
+		border-color: var(--light-blue2);
+		color: var(--bold-text);
+
+		&:hover {
+			background-color: var(--primary);
+			color: var(--white);
+			border-color: var(--white);
+		}
+	}
+
 	&.text {
 		all: unset;
 		color: var(--primary);

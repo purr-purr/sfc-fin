@@ -7,6 +7,7 @@
 	--bold-text: #121212;
 	--white: #fff;
 	--light-blue: #c0d4ee;
+	--light-blue2: #CCDDF1;
 	--gray: #d0d0d0;
 	--light-gray: #E4E4E7;
 	--red: #EB5757;
@@ -108,11 +109,17 @@ input:-webkit-autofill:active {
 	transition: background-color 5000s ease-in-out 0s;
 }
 
+
 .MuiStepLabel-alternativeLabel {
 	color: var(--main-text) !important;
 	font-weight: 500;
 	font-size: 14px;
 	cursor: auto;
+
+	@include media($mobile-bp) {
+		font-weight: 400;
+		font-size: 12px;
+	}
 }
 
 .Mui-completed {

@@ -1,3 +1,4 @@
+export const LOW_MOBILE_BREAKPOINT: number = 468;
 export const MOBILE_BREAKPOINT: number = 1024;
 export const LAPTOP_BREAKPOINT: number = 1200;
 export const APP_AUTHOR: string = 'Anton Shaposhnikov';
@@ -14,7 +15,7 @@ export const COMPANY_CATCHPHRASE: string =
 	'Наша місія - надати вам ефективні' +
 	' фінансові рішення, які сприятимуть вашому успіху в діловому та особистому житті.';
 export const COMPANY_PHONE: string = '+380914818839';
-export const COMPANY_EMAIL: string = 'litefinance@ukr.net';
+export const COMPANY_EMAIL: string = 'sfc.finance.tech@gmail.com';
 export const COMPANY_ADDRESS: string =
 	'Україна, 03056, місто Київ, вул.Борщагівська, будинок 154';
 export const COMPANY_MAP_LINK: string =

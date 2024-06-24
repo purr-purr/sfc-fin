@@ -5,7 +5,7 @@ import cn from 'classnames';
 
 const Button: FC<{
 	text: string;
-	type?: 'primary' | 'white' | 'text';
+	type?: 'primary' | 'white' | 'light' | 'text';
 	size?: 'small' | 'regular';
 	className?: string;
 	onClick?: () => void;

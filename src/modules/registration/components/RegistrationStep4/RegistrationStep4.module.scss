@@ -1,0 +1,30 @@
+.title {
+	font-weight: 500;
+	font-size: 16px;
+	margin-bottom: 16px;
+	text-align: center;
+	color: var(--bold-text);
+
+	@include media($mobile-bp) {
+		margin-bottom: 24px;
+	}
+}
+
+.buttonGroup {
+	@include flex($align: center, $gap: 40px);
+	margin-bottom: 40px;
+
+	@include media($mobile-bp) {
+		flex-direction: column;
+		gap: 12px;
+		margin-bottom: 24px;
+	}
+
+	& button {
+		width: 50%;
+
+		@include media($mobile-bp) {
+			width: 100%;
+		}
+	}
+}

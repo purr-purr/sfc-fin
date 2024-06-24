@@ -6,6 +6,9 @@ import StepConnector, {stepConnectorClasses} from '@mui/material/StepConnector';
 import type {StepIconProps} from '@mui/material/StepIcon';
 import s from './RegistrationStapper.module.scss';
 import {FC} from "react";
+import type {registrationSteps} from "@modules/registration/types";
+import {useMediaQuery} from "@modules/common/hooks";
+import {MOBILE_BREAKPOINT} from "@utils/const";
 
 const ColorlibConnector = styled(StepConnector)(() => ({
 	[`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -32,15 +35,22 @@ const ColorlibConnector = styled(StepConnector)(() => ({
 }));
 
 const ColorlibStepIconRoot = styled('div')<{
-	ownerState: { completed?: boolean; active?: boolean };
+	ownerState: { completed?: boolean; active?: boolean; isMobile?: boolean };
 }>(({ownerState}) => ({
 	backgroundColor: '#E9E9EB',
 	zIndex: 1,
 	color: '#fff',
-	fontWeight: 700,
-	fontSize: '18px',
-	width: 50,
-	height: 50,
+	...(ownerState.isMobile ? {
+		width: 24,
+		height: 24,
+		fontSize: '10px',
+		fontWeight: 400,
+	} : {
+		width: 50,
+		height: 50,
+		fontSize: '18px',
+		fontWeight: 700,
+	}),
 	display: 'flex',
 	borderRadius: '50%',
 	justifyContent: 'center',
@@ -56,6 +66,7 @@ const ColorlibStepIconRoot = styled('div')<{
 }));
 
 function ColorlibStepIcon(props: StepIconProps) {
+	const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
 	const {active, completed} = props;
 
 	const stepsNumber: { [index: string]: string } = {
@@ -67,7 +78,7 @@ function ColorlibStepIcon(props: StepIconProps) {
 
 	return (
 		<ColorlibStepIconRoot
-			ownerState={{completed, active}}>
+			ownerState={{completed, active, isMobile}}>
 			{stepsNumber[String(props.icon)]}
 		</ColorlibStepIconRoot>
 	);

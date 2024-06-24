@@ -5,9 +5,6 @@ import {
 	archivedInformation,
 	auditReports,
 	financeReports,
-	infoOwnershipStructure,
-	innerRules,
-	news,
 } from '@modules/home/components/Reports/data';
 
 const Reports = () => {
@@ -16,14 +13,6 @@ const Reports = () => {
 			title="Вся необхідна документація"
 			anchor="documentation"
 		>
-			<Accordion title="Внутрішні правила">
-				<DocumentsList list={innerRules}/>
-			</Accordion>
-
-			<Accordion title="Інформація про структуру власності">
-				<DocumentsList groupList={infoOwnershipStructure}/>
-			</Accordion>
-
 			<Accordion title="Аудиторські висновки">
 				<DocumentsList list={auditReports}/>
 			</Accordion>
@@ -34,10 +23,6 @@ const Reports = () => {
 
 			<Accordion title="Архівна інформація">
 				<DocumentsList list={archivedInformation}/>
-			</Accordion>
-
-			<Accordion title="Новини">
-				<DocumentsList list={news}/>
 			</Accordion>
 		</SplitBlocks>
 	);

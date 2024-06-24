@@ -1,19 +1,21 @@
 import {type ChangeEvent, FC, useEffect, useState} from 'react';
 import Input from "@modules/common/components/Input";
 import Checkbox from "@modules/common/components/Checkbox";
+import {
+	validateConfirmPassword,
+	validateDefault,
+	validateEmail,
+	validatePassword,
+	validatePhone
+} from "@modules/registration/helpers";
+import type {
+	IFormValues,
+	IRegistrationStepProps,
+	IValidationState
+} from "@modules/registration/types";
 
-type FormValues = {
-	[key: string]: string;
-};
-
-type ValidationState = {
-	[key: string]: boolean;
-};
-
-const RegistrationStep1: FC<{
-	isDone: (value: boolean) => void;
-}> = ({isDone}) => {
-	const initFormValues: FormValues = {
+const RegistrationStep1: FC<IRegistrationStepProps> = ({isDone}) => {
+	const initFormValues: IFormValues = {
 		lastname: '',
 		firstname: '',
 		middlename: '',
@@ -26,8 +28,8 @@ const RegistrationStep1: FC<{
 		offersAgreement: '',
 	};
 
-	const [formValues, setFormValues] = useState<FormValues>(initFormValues);
-	const [validationState, setValidationState] = useState<ValidationState>({
+	const [formValues, setFormValues] = useState<IFormValues>(initFormValues);
+	const [validationState, setValidationState] = useState<IValidationState>({
 		lastname: false,
 		firstname: false,
 		middlename: false,
@@ -40,60 +42,38 @@ const RegistrationStep1: FC<{
 		offersAgreement: false,
 	});
 
-	const validatePhone = (phone: string): boolean => {
-		const phoneRegex = /^\+380\d{9}$/;
-		return phoneRegex.test(phone);
-	};
-
-	const validateEmail = (email: string): boolean => {
-		const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-		return emailRegex.test(email);
-	};
-
-	const validateDefault = (value: string): boolean => {
-		return value.length >= 3;
-	};
-
-	const validatePassword = (password: string): boolean => {
-		return password.length >= 8;
-	};
-
-	const validateConfirmPassword = (password: string): boolean => {
-		return password === formValues.password;
-	};
-
 	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const {name, value} = e.target;
 
 		setFormValues((prevValues) => ({
 			...prevValues,
-			[name]: value,
+			[name as string]: value,
 		}));
 
 		if (name === 'password') {
 			setValidationState((prevState) => ({
 				...prevState,
-				password: validatePassword(value),
+				[name]: validatePassword(value),
 			}));
 		} else if (name === 'confirmPassword') {
 			setValidationState((prevState) => ({
 				...prevState,
-				confirmPassword: validateConfirmPassword(value),
+				[name]: validateConfirmPassword(value, formValues.password),
 			}));
 		} else if (name === 'phone') {
 			setValidationState((prevState) => ({
 				...prevState,
-				phone: validatePhone(value),
+				[name]: validatePhone(value),
 			}));
 		} else if (name === 'email') {
 			setValidationState((prevState) => ({
 				...prevState,
-				email: validateEmail(value),
+				[name]: validateEmail(value),
 			}));
 		} else {
 			setValidationState((prevState) => ({
 				...prevState,
-				[name]: validateDefault(value),
+				[name as string]: validateDefault(value),
 			}));
 		}
 	};
@@ -103,7 +83,7 @@ const RegistrationStep1: FC<{
 
 		setFormValues((prevValues) => ({
 			...prevValues,
-			[name]: checked ? '1' : '',
+			[name as string]: checked ? '1' : '',
 		}));
 
 		if (name === 'offersAgreement') {
@@ -114,7 +94,7 @@ const RegistrationStep1: FC<{
 		} else {
 			setValidationState((prevState) => ({
 				...prevState,
-				[name]: checked,
+				[name as any]: checked,
 			}));
 		}
 	};
