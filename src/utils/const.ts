@@ -14,8 +14,9 @@ export const COMPANY_FULL_NAME: string = `${COMPANY_NAME[0]} ${COMPANY_NAME[1]}`
 export const COMPANY_CATCHPHRASE: string =
 	'Наша місія - надати вам ефективні' +
 	' фінансові рішення, які сприятимуть вашому успіху в діловому та особистому житті.';
-export const COMPANY_PHONE: string = '+380914818839';
-export const COMPANY_EMAIL: string = 'sfc.finance.tech@gmail.com';
+export const COMPANY_PHONE: string = '+380632413618';
+export const COMPANY_EMAIL: string = 'sysfincon@ukr.net';
+export const COMPANY_EDRPOU: string = '42483814';
 export const COMPANY_ADDRESS: string =
 	'Україна, 03056, місто Київ, вул.Борщагівська, будинок 154';
 export const COMPANY_MAP_LINK: string =

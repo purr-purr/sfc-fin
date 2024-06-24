@@ -1,48 +1,39 @@
 import {importDoc} from '@utils/formatters';
-import {type IDocumentsList, IDocumentsListGroup} from '@utils/types';
+import {type IDocumentsList} from '@utils/types';
 
-export const financeReports: IDocumentsListGroup[] = [
+export const disclosureInformation: IDocumentsList[] = [
 	{
-		groupTitle: '2023',
-		list: [
-			{
-				title: 'Баланс (Звіт про фінансовий стан) на 31 березня 2023 р.',
-				link: importDoc(''),
-			}
-		],
-	},
-	{
-		groupTitle: '2022',
-		list: [
-			{
-				title: 'Баланс (Звіт про фінансовий стан) на 31 грудня 2022 р.',
-				link: importDoc(''),
-			}
-		],
-	},
-];
-
-export const archivedInformation: IDocumentsList[] = [
-	{
-		title:
-			'Правила надання коштів у позику, в тому числі і на умовах фінансового кредиту - Редакція, яка діяла до 14.06.2023 включно',
-		link: importDoc(''),
+		title: 'Свідоцтво фінансової установи',
+		link: importDoc('2_Svidoctvo_SFC.pdf'),
 	},
 	{
 		title:
-			'Правила надання коштів у позику, в тому числі і на умовах фінансового кредиту - Редакція, яка діяла до 10.04.2024 включно',
-		link: importDoc(''),
-	}
-];
-
-export const auditReports: IDocumentsList[] = [
-	{
-		title: 'Звіт незалежного аудитора щодо фінансової звітності за 2020 рік',
-		link: importDoc(''),
+			'Правила надання споживчих кредитів',
+		link: importDoc('3_Pravyla.pdf'),
 	},
 	{
 		title:
-			'Незалежний звіт з надання впевненості щодо річних звітних даних за 2020 рік',
-		link: importDoc(''),
+			'Порядок розгляду звернень споживічів',
+		link: importDoc('4_Poriadok_rozgliad_spozh.pdf'),
+	},
+	{
+		title:
+			'Порядок взаємодії із споживачами',
+		link: importDoc('5_Poriadok_vzaemodii_spozh.pdf'),
+	},
+	{
+		title:
+			'Договір споживчого кредиту',
+		link: importDoc('6_Dogovir spozhivchogo creditu.pdf'),
+	},
+	{
+		title:
+			'Паспорт споживчого кредиту',
+		link: importDoc('7_Pasport kredytu.pdf'),
+	},
+	{
+		title:
+			'Статут ТОВ «СИСТЕМНИЙ ФІНАНСОВИЙ КОНСАЛТИНГ»',
+		link: importDoc('8_Statut.pdf'),
 	}
 ];

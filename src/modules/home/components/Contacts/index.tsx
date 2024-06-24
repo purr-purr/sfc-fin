@@ -2,20 +2,16 @@ import Link from 'next/link';
 
 import {
 	COMPANY_ADDRESS,
+	COMPANY_EDRPOU,
 	COMPANY_EMAIL,
 	COMPANY_MAP_LINK,
 	COMPANY_PHONE,
 } from '@utils/const';
 
-import ICON_EMAIL from '@public/assets/icon-email.svg';
-import ICON_MAP from '@public/assets/icon-map.svg';
-import ICON_PHONE from '@public/assets/icon-phone.svg';
-
 import s from './Contacts.module.scss';
 import SplitBlocks from '@modules/common/components/SplitBlocks';
 
 interface IContactItem {
-	icon: string;
 	title: string;
 	desc: string;
 	link?: string;
@@ -24,21 +20,22 @@ interface IContactItem {
 const Contacts = () => {
 	const contactsList: IContactItem[] = [
 		{
-			icon: ICON_MAP,
 			title: 'Адреса',
 			desc: COMPANY_ADDRESS,
 		},
 		{
-			icon: ICON_EMAIL,
 			title: 'Електронна Пошта',
 			desc: COMPANY_EMAIL,
 			link: `mailto:${COMPANY_EMAIL}`,
 		},
 		{
-			icon: ICON_PHONE,
 			title: 'Телефон',
 			desc: COMPANY_PHONE,
 			link: `tel:${COMPANY_PHONE}`,
+		},
+		{
+			title: 'ЄДРПОУ',
+			desc: COMPANY_EDRPOU,
 		}
 	];
 
